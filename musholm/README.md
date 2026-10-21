@@ -3,8 +3,13 @@
 Corrected copy of https://discoverseafood.world/musholm (saved Squarespace page).
 The live site is unchanged until the same edits are made in the Squarespace editor.
 
-To view locally, place `musholm-discover-seafood.html` next to the original
-`Musholm — Discover Seafood_files` folder from the browser save.
+## Files
+
+- `index.html` — preview for GitHub Pages. Same content as the saved page, with images loaded from
+  the Squarespace CDN and the site stylesheet copied into `assets/`. Squarespace's own scripts are
+  removed; a small script keeps the accordions working, and the Google Map is replaced by a link.
+- `musholm-discover-seafood.html` — the corrected browser save. To view it locally, place it next to
+  the original `Musholm — Discover Seafood_files` folder.
 
 ## Changes
 
