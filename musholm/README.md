@@ -46,3 +46,18 @@ The live site is unchanged until the same edits are made in the Squarespace edit
 
 5. **Carbon footprint unit** — "1.44 CO₂ eq. / kg feed" → "1.44 kg CO₂e / kg feed" (also in the
    screen-reader text). See `carbon-footprint-widget.png`.
+
+## Consumer version (`consumer/index.html`)
+
+A phone-first rewrite for shoppers who scan the QR code in store. Same facts as the current page,
+reordered and in plain language: where the trout comes from, nutrition highlights (full table folded
+away), the three nature targets, the feed in three numbers, two simple recipes, and contact.
+
+To confirm with Musholm before use:
+- The three sea farms are in the Great Belt (the page says so).
+- Trout species (for example rainbow trout), and whether roe should be mentioned.
+- Nutrition figures are for raw fillet.
+- Nutrition wording ("high in protein, omega-3, vitamin D and vitamin B12") meets EU nutrition claim
+  rules (Regulation (EC) 1924/2006), and environmental wording is reviewed against EU green claims rules.
+- Whether to use the ASC logo (needs an ASC logo licence); the page only names the certification.
+- The contact email (currently Teis Volstrup's direct address).
