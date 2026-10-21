@@ -49,9 +49,11 @@ The live site is unchanged until the same edits are made in the Squarespace edit
 
 ## Consumer version (`consumer/index.html`)
 
-A phone-first rewrite for shoppers who scan the QR code in store. Same facts as the current page,
-reordered and in plain language: where the trout comes from, nutrition highlights (full table folded
-away), the three nature targets, the feed in three numbers, two simple recipes, and contact.
+A rewrite for shoppers who scan the QR code in store, built in the existing Discover Seafood style
+(same palette, Montserrat type, grey cards, navy sections, icon menu, accordions and the three impact
+gauges). Same facts as the current page, reordered and in plain language: the trout's journey,
+nutrition highlights (full table folded away), ASC, the three nature targets, the feed, two simple
+recipes, and contact. The map is an OpenStreetMap embed, as Google's embed needs an API key.
 
 To confirm with Musholm before use:
 - The three sea farms are in the Great Belt (the page says so).
@@ -59,5 +61,5 @@ To confirm with Musholm before use:
 - Nutrition figures are for raw fillet.
 - Nutrition wording ("high in protein, omega-3, vitamin D and vitamin B12") meets EU nutrition claim
   rules (Regulation (EC) 1924/2006), and environmental wording is reviewed against EU green claims rules.
-- Whether to use the ASC logo (needs an ASC logo licence); the page only names the certification.
+- The ASC logo is shown, as on the current page; check Musholm's ASC logo licence covers consumer use.
 - The contact email (currently Teis Volstrup's direct address).
