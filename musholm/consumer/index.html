@@ -119,8 +119,13 @@
   .feed .stack{position:relative;padding:0 0 0 18%}
   .feed .stack .logo-card{position:absolute;left:0;top:-28px;width:52%;background:#dadada;border-radius:8px;padding:28px 22px;z-index:1}
   .feed .stack .photo{aspect-ratio:4/3.4}
-  .gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;align-items:start}
-  .gauges > div{min-width:0}
+  .gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;align-items:stretch}
+  .gauges > div{min-width:0;display:flex}
+  /* same-sized gauges and cards; the whole block is the hover/tap target */
+  .gauges #bm-cf,.gauges #bm-cr,.gauges #bm-ff{flex:1;cursor:pointer;justify-content:flex-start}
+  .gauges .bm-inner{flex:1;display:flex;flex-direction:column}
+  .gauges .bm-gauge{height:230px !important;width:100% !important}
+  .gauges .bm-card{flex:1;margin-top:20px !important}
   .tap{text-align:center;font-size:14.5px;opacity:.8;margin-top:20px}
 
   /* cook */
@@ -310,7 +315,7 @@
       </div>
       <div>
         <h3 style="margin-bottom:18px">Three numbers we track</h3>
-        <p>BioMar measures three things in our feed, and uses them to improve it year by year. Tap a gauge below to see where each one sits on the scale.</p>
+        <p>BioMar measures three things in our feed, and uses them to improve it year by year. Hover over or tap each one below to see where it sits on the scale.</p>
       </div>
     </div>
     <div class="gauges">
@@ -496,17 +501,19 @@
     sr.textContent = open ? 'Carbon footprint: ' + value + ' kg CO2e per kg feed' : '';
   }
 
-  spot.addEventListener('mouseenter', function(){ set(true); });
-  spot.addEventListener('mouseleave', function(){ set(false); });
+  // The whole block (gauge and card) responds to hover and tap
+  var root = document.getElementById('bm-cf');
+  root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') set(true); });
+  root.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') set(false); });
+  root.addEventListener('click', function(e){ e.preventDefault(); set(true); });
   spot.addEventListener('focus',      function(){ set(true); });
   spot.addEventListener('blur',       function(){ set(false); });
-  spot.addEventListener('click', function(e){ e.preventDefault(); set(!open); });
   spot.addEventListener('keydown', function(e){
     if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); set(!open); }
     if (e.key === 'Escape'){ set(false); spot.blur(); }
   });
   document.addEventListener('click', function(e){
-    if (open && !spot.contains(e.target)) set(false);
+    if (open && !root.contains(e.target)) set(false);
   });
 
   // Centre each CO2 lockup once the webfont is in, so Montserrat's real
@@ -697,12 +704,15 @@
     sr.textContent = open ? 'Circular and restorative ingredients: ' + value : '';
   }
 
+  // The whole block (gauge and card) responds to hover and tap
+  var root = document.getElementById('bm-cr');
+  root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') set(true); });
+  root.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') set(false); });
+  root.addEventListener('click', function(e){ e.preventDefault(); set(true); });
+
   Array.prototype.forEach.call(spots, function(spot){
-    spot.addEventListener('mouseenter', function(){ set(true); });
-    spot.addEventListener('mouseleave', function(){ set(false); });
     spot.addEventListener('focus',      function(){ set(true); });
     spot.addEventListener('blur',       function(){ set(false); });
-    spot.addEventListener('click', function(e){ e.preventDefault(); set(!open); });
     spot.addEventListener('keydown', function(e){
       if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); set(!open); }
       if (e.key === 'Escape'){ set(false); spot.blur(); }
@@ -711,8 +721,7 @@
 
   document.addEventListener('click', function(e){
     if (!open) return;
-    for (var i=0;i<spots.length;i++){ if (spots[i].contains(e.target)) return; }
-    set(false);
+    if (!root.contains(e.target)) set(false);
   });
 })();
 </script></div>
@@ -878,12 +887,15 @@
     sr.textContent = open ? 'Forage fish dependency ratio: ' + value : '';
   }
 
+  // The whole block (gauge and card) responds to hover and tap
+  var root = document.getElementById('bm-ff');
+  root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') set(true); });
+  root.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') set(false); });
+  root.addEventListener('click', function(e){ e.preventDefault(); set(true); });
+
   Array.prototype.forEach.call(spots, function(spot){
-    spot.addEventListener('mouseenter', function(){ set(true); });
-    spot.addEventListener('mouseleave', function(){ set(false); });
     spot.addEventListener('focus',      function(){ set(true); });
     spot.addEventListener('blur',       function(){ set(false); });
-    spot.addEventListener('click', function(e){ e.preventDefault(); set(!open); });
     spot.addEventListener('keydown', function(e){
       if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); set(!open); }
       if (e.key === 'Escape'){ set(false); spot.blur(); }
@@ -892,8 +904,7 @@
 
   document.addEventListener('click', function(e){
     if (!open) return;
-    for (var i=0;i<spots.length;i++){ if (spots[i].contains(e.target)) return; }
-    set(false);
+    if (!root.contains(e.target)) set(false);
   });
 })();
 </script></div>
