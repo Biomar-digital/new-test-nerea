@@ -124,7 +124,9 @@
   /* same-sized gauges and cards; the whole block is the hover/tap target */
   .gauges #bm-cf,.gauges #bm-cr,.gauges #bm-ff{flex:1;cursor:pointer;justify-content:flex-start}
   .gauges .bm-inner{flex:1;display:flex;flex-direction:column}
-  .gauges .bm-gauge{height:230px !important;width:100% !important}
+  .gauges .bm-gauge{height:200px !important;width:100% !important;margin:20px 0 !important}
+  /* the round gauge is narrower, so draw it a little taller to look the same size */
+  .gauges #bm-cr-gauge{height:240px !important;margin:0 !important}
   .gauges .bm-card{flex:1;margin-top:20px !important}
   .tap{text-align:center;font-size:14.5px;opacity:.8;margin-top:20px}
 
@@ -426,7 +428,7 @@
 <div id="bm-cf">
  <div class="bm-inner">
 
-  <svg class="bm-gauge" viewBox="-10 40 420 272" role="img" aria-labelledby="bm-cf-title" id="bm-cf-gauge">
+  <svg class="bm-gauge" viewBox="42 50 316 253" role="img" aria-labelledby="bm-cf-title" id="bm-cf-gauge">
     <title id="bm-cf-title">Carbon footprint gauge</title>
 
     <!-- cloud body -->
@@ -616,7 +618,7 @@
 <div id="bm-cr">
  <div class="bm-inner">
 
-  <svg class="bm-gauge" viewBox="-10 20 420 378" role="img" aria-labelledby="bm-cr-title" id="bm-cr-gauge">
+  <svg class="bm-gauge" viewBox="12 20 376 376" role="img" aria-labelledby="bm-cr-title" id="bm-cr-gauge">
     <title id="bm-cr-title">Circular and restorative ingredients gauge</title>
 
     <!-- white body -->
@@ -811,7 +813,7 @@
 <div id="bm-ff">
  <div class="bm-inner">
 
-  <svg class="bm-gauge" viewBox="-10 30 420 290" role="img" aria-labelledby="bm-ff-title" id="bm-ff-gauge">
+  <svg class="bm-gauge" viewBox="6 32 361 278" role="img" aria-labelledby="bm-ff-title" id="bm-ff-gauge">
     <title id="bm-ff-title">Forage fish dependency gauge</title>
 
     <!-- fish head body, traced from the source artwork -->
