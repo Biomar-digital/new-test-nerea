@@ -1,0 +1,169 @@
+<!--
+  ══════════════════════════════════════════════════════════════
+  MUSHOLM — STORY, QUOTE AND NUTRITION (one block)
+  Paste everything below into a single Squarespace Code Block
+  (Display source code: off), stretched to the full width of the
+  section. All styles are scoped to #ms-discover.
+  Montserrat is already loaded by the site. No JavaScript needed.
+
+  EDIT POINTS
+  • Text and numbers .. in the HTML below
+  • Photo ............. the <img> src
+  • Colours ........... --ink / --card at the top of the styles
+  ══════════════════════════════════════════════════════════════
+-->
+<style>
+  #ms-discover{
+    --ink:#253551;
+    --card:rgba(218,218,218,.84);
+    box-sizing:border-box;
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    color:var(--ink);
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+  }
+  #ms-discover *,#ms-discover *::before,#ms-discover *::after{box-sizing:inherit}
+  #ms-discover h2,#ms-discover h3,#ms-discover p,#ms-discover blockquote{margin:0;padding:0;color:var(--ink);font-family:inherit;letter-spacing:normal;text-transform:none;border:0}
+  #ms-discover h2{font-size:clamp(30px,2.9vw,40px);line-height:1.13;font-weight:600;text-align:center}
+  #ms-discover h3{font-size:clamp(22px,1.9vw,26px);line-height:1.15;font-weight:600}
+  #ms-discover p{font-size:clamp(16px,1.25vw,17.6px);line-height:1.8;font-weight:400}
+  #ms-discover .ms-intro{text-align:center;max-width:820px;margin:16px auto 0}
+  #ms-discover .ms-card{background:var(--card);border-radius:8px;padding:clamp(28px,3.2vw,44px) clamp(22px,3vw,40px)}
+
+  /* story */
+  #ms-discover .ms-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:44px}
+  #ms-discover .ms-step{text-align:center}
+  #ms-discover .ms-num{display:block;font-size:clamp(40px,3.6vw,52px);line-height:1;font-weight:600;margin-bottom:14px}
+  #ms-discover .ms-step h3{margin-bottom:18px}
+  #ms-discover .ms-farm{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;margin-top:12px}
+  #ms-discover .ms-photo{border-radius:8px;overflow:hidden;min-height:340px}
+  #ms-discover .ms-photo img{display:block;width:100%;height:100%;object-fit:cover}
+  #ms-discover .ms-who h3{font-size:clamp(24px,2.3vw,32px);margin-bottom:18px}
+  #ms-discover .ms-who p + p{margin-top:1em}
+  #ms-discover .ms-link{display:inline-block;margin-top:18px;font-size:16px;font-weight:600;letter-spacing:.05em;color:var(--ink);text-decoration:none;border:0}
+  #ms-discover .ms-link:hover{text-decoration:underline}
+
+  /* quote */
+  #ms-discover .ms-quote{max-width:820px;margin:clamp(56px,6vw,90px) auto 0}
+  #ms-discover .ms-quote p{font-size:clamp(19px,1.6vw,22px);line-height:1.6}
+  #ms-discover .ms-quote .ms-who-said{display:block;margin-top:1em;font-size:16px;font-weight:700}
+
+  /* nutrition */
+  #ms-discover .ms-nutrition{margin-top:clamp(64px,7vw,110px)}
+  #ms-discover .ms-high{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+  #ms-discover .ms-high .ms-card{padding:28px 16px;text-align:center}
+  #ms-discover .ms-high b{display:block;font-size:clamp(30px,2.8vw,40px);line-height:1.1;font-weight:600}
+  #ms-discover .ms-high span{display:block;font-weight:600;margin-top:6px;font-size:16px}
+  #ms-discover .ms-high small{display:block;font-size:14px;line-height:1.5;margin-top:4px}
+
+  #ms-discover .ms-acc{max-width:760px;margin:40px auto 0;border-top:1px solid var(--ink)}
+  #ms-discover details{border-bottom:1px solid var(--ink)}
+  #ms-discover summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-size:clamp(22px,2vw,26.8px);font-weight:600;color:var(--ink)}
+  #ms-discover summary::-webkit-details-marker{display:none}
+  #ms-discover summary::after{content:"";flex:none;width:16px;height:16px;background:
+      linear-gradient(var(--ink),var(--ink)) center/100% 1px no-repeat,
+      linear-gradient(var(--ink),var(--ink)) center/1px 100% no-repeat}
+  #ms-discover details[open] summary::after{background:linear-gradient(var(--ink),var(--ink)) center/100% 1px no-repeat}
+  #ms-discover .ms-acc-body{padding:0 0 26px}
+  #ms-discover .ms-acc-body > p{font-size:14.5px;margin-bottom:8px}
+  #ms-discover .ms-table{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  #ms-discover .ms-table .ms-card{padding:26px 24px}
+  #ms-discover .ms-table p{font-size:14.5px;line-height:1.8;margin:0 0 .55em}
+  #ms-discover .ms-table p:last-child{margin-bottom:0}
+
+  /* phones */
+  @media (max-width:820px){
+    #ms-discover .ms-steps,#ms-discover .ms-farm,#ms-discover .ms-table{grid-template-columns:1fr}
+    #ms-discover .ms-high{grid-template-columns:1fr 1fr}
+    #ms-discover .ms-photo{min-height:240px}
+  }
+</style>
+
+<div id="ms-discover">
+
+  <h2>Discover the story behind your trout</h2>
+  <p class="ms-intro">We raise our trout in stages that follow the fish's own life cycle, from the spring water where the eggs hatch to the open sea.</p>
+
+  <div class="ms-steps">
+    <div class="ms-card ms-step">
+      <span class="ms-num">1</span>
+      <h3>Spring water</h3>
+      <p>The eggs hatch in spring water.</p>
+    </div>
+    <div class="ms-card ms-step">
+      <span class="ms-num">2</span>
+      <h3>Freshwater</h3>
+      <p>The young trout grow up in our 18 freshwater farms in Denmark.</p>
+    </div>
+    <div class="ms-card ms-step">
+      <span class="ms-num">3</span>
+      <h3>The sea</h3>
+      <p>They then move to one of our three sea farms in the Great Belt.</p>
+    </div>
+  </div>
+
+  <div class="ms-farm">
+    <div class="ms-photo">
+      <img src="https://images.squarespace-cdn.com/content/v1/6087cdf4156ca6635a3438ee/3b533b76-c3f1-487d-9a6e-48273fa79447/Mushollm.JPG?format=1500w" alt="A Musholm sea farm pen in the Great Belt under a cloudy sky" loading="lazy">
+    </div>
+    <div class="ms-card ms-who">
+      <h3>Who we are</h3>
+      <p>Musholm is a Danish trout producer based at Reersø harbour on west Zealand, on the Great Belt. We farm across 18 freshwater farms and three sea farms, and follow each trout from the egg all the way to the sea.</p>
+      <p>We care about the waters we farm in, and the places our feed comes from. That is why we were the first fish farmer to set Science Based Targets for Nature.</p>
+      <a class="ms-link" href="https://www.google.com/maps?q=Musholm+A/S,+Standvejen+101,+4281+G%C3%B8rlev,+Denmark" target="_blank" rel="noopener">See where we are →</a>
+    </div>
+  </div>
+
+  <blockquote class="ms-quote">
+    <p>“We want to take responsibility locally, where we raise our fish, but also in the parts of the world where the ingredients for our feed come from, because our demand also affects nature there.”</p>
+    <span class="ms-who-said">— Thorbjørn Harkamp, CEO of Musholm</span>
+  </blockquote>
+
+  <div class="ms-nutrition" id="nutrition">
+    <h2>Nutritional information</h2>
+    <p class="ms-intro">Our trout is high in protein, omega-3, vitamin D and vitamin B12. Per 100 g of raw fillet:</p>
+
+    <div class="ms-high">
+      <div class="ms-card"><b>20.8 g</b><span>Protein</span><small>42% of your daily reference intake</small></div>
+      <div class="ms-card"><b>0.75 g</b><span>Omega-3</span><small>EPA + DHA, the omega-3 found in fish</small></div>
+      <div class="ms-card"><b>99%</b><span>Vitamin D</span><small>of your daily reference intake</small></div>
+      <div class="ms-card"><b>100%</b><span>Vitamin B12</span><small>of your daily reference intake</small></div>
+    </div>
+
+    <div class="ms-acc">
+      <details>
+        <summary>Full nutritional information</summary>
+        <div class="ms-acc-body">
+          <p>Analysis per 100 g (3.5 oz) of raw fillet. Percentages are of the Reference Intake (RI) for an average adult (8400 kJ / 2000 kcal). – No reference intake established.</p>
+          <div class="ms-table">
+            <div class="ms-card">
+              <p><strong>Energy</strong> – 149 kcal / 623 kJ (7.5% RI)</p>
+              <p><strong>Protein</strong> – 20.8 g (41.6% RI)</p>
+              <p><strong>Fat</strong> – 7.2 g (10.3% RI)</p>
+              <p><strong>Saturated Fat</strong> – 1.0 g (5.0% RI)</p>
+              <p><strong>Carbohydrates</strong> – 0 g (0% RI)</p>
+              <p><strong>Salt</strong> – 0.1 g (1.7% RI)</p>
+            </div>
+            <div class="ms-card">
+              <p><strong>Omega-3</strong> – 1.4 g (–)</p>
+              <p><strong>EPA + DHA</strong> – 0.75 g (–)</p>
+              <p><strong>Omega-6</strong> – 1.3 g (–)</p>
+              <p><strong>Cholesterol</strong> – 46.45 mg (–)</p>
+              <p><strong>Vitamin D</strong> – 4.94 µg (98.8% RI)</p>
+            </div>
+            <div class="ms-card">
+              <p><strong>Vitamin B6</strong> – 0.21 mg (15.0% RI)</p>
+              <p><strong>Vitamin B12</strong> – 2.49 µg (99.6% RI)</p>
+              <p><strong>Calcium</strong> – 18 mg (2.3% RI)</p>
+              <p><strong>Iron</strong> – 0.29 mg (2.1% RI)</p>
+              <p><strong>Magnesium</strong> – 26 mg (6.9% RI)</p>
+              <p><strong>Phosphorus</strong> – 210 mg (30.0% RI)</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</div>
