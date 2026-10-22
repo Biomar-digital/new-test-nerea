@@ -66,9 +66,9 @@ To confirm with Musholm before use:
 
 ## Concept version (`concept/index.html`)
 
-A free-design take on the consumer page, not bound to the current Squarespace template. Editorial
-layout with Source Serif headlines and Montserrat body; answers "where is it from?" in the first
-screen; every number is visible without hovering; the nature targets become three big figures
-(56 ha, ½, 2 seas); the feed gauges become simple scales marked "higher/lower is better"; and a
-"your pack" placeholder shows where batch-level traceability (farm, harvest date) would go.
+A free-design take on the consumer page, built around Musholm's own brand and the moment of
+scanning a pack rather than a landing-page template: Musholm blue (#093C79, from the logo), white
+and photography; a map of the Great Belt ("This is where your trout grew up"); the life cycle as
+swipeable panels; nutrition as a real EU nutrition declaration; the reef target set over the Great
+Belt photo; the feed numbers as a plain table with "higher/lower is better"; and two recipes.
 Same facts as the other versions, and the same points to confirm apply.
