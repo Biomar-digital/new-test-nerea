@@ -1,0 +1,662 @@
+<!--
+  ══════════════════════════════════════════════════════════════
+  MUSHOLM — "WHAT OUR TROUT EATS" WITH THE THREE IMPACT GAUGES
+  Paste everything below into a single Squarespace Code Block
+  (Display source code: off), in a navy section, stretched to the
+  full width. Replaces the three separate gauge code blocks: remove
+  those, as the gauges must only appear once on the page.
+  Styles are scoped to #ms-feed and #bm-cf / #bm-cr / #bm-ff.
+  ══════════════════════════════════════════════════════════════
+-->
+<style>
+  #ms-feed{
+    --white:#f5f9fb;
+    box-sizing:border-box;
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    color:var(--white);
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+  }
+  #ms-feed *,#ms-feed *::before,#ms-feed *::after{box-sizing:inherit}
+  #ms-feed .ms-h2,#ms-feed .ms-h3,#ms-feed .ms-p{margin:0;padding:0;color:var(--white);font-family:inherit;letter-spacing:normal;text-transform:none}
+  #ms-feed .ms-h2{font-size:clamp(30px,2.9vw,40px);line-height:1.13;font-weight:600;text-align:center}
+  #ms-feed .ms-h3{font-size:clamp(24px,2.3vw,32px);line-height:1.15;font-weight:600;margin-bottom:18px}
+  #ms-feed .ms-p{font-size:clamp(16px,1.25vw,17.6px);line-height:1.8;font-weight:400}
+  #ms-feed .ms-intro{text-align:center;max-width:820px;margin:16px auto 0}
+  #ms-feed .ms-center{text-align:center}
+  #ms-feed .ms-link{display:inline-block;font-size:16px;font-weight:600;letter-spacing:.05em;color:var(--white);text-decoration:none;border:0}
+  #ms-feed .ms-link:hover{text-decoration:underline}
+
+  #ms-feed .ms-feed{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:56px}
+  #ms-feed .ms-stack{position:relative;padding:0 0 0 18%}
+  #ms-feed .ms-logo{position:absolute;left:0;top:-28px;width:52%;background:#dadada;border-radius:8px;padding:28px 22px;z-index:1}
+  #ms-feed .ms-logo img{display:block;width:100%;height:auto}
+  #ms-feed .ms-photo{border-radius:8px;overflow:hidden;aspect-ratio:4/3.4}
+  #ms-feed .ms-photo img{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* gauges: same size, cards level, whole block is the hover/tap target */
+  #ms-feed .ms-gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;align-items:stretch}
+  #ms-feed .ms-gauges > div{min-width:0;display:flex}
+  #ms-feed #bm-cf,#ms-feed #bm-cr,#ms-feed #bm-ff{flex:1;cursor:pointer;justify-content:flex-start;background:transparent !important}
+  #ms-feed .bm-inner{flex:1;display:flex;flex-direction:column}
+  #ms-feed .bm-gauge{height:200px !important;width:100% !important;margin:20px 0 !important}
+  #ms-feed #bm-cr-gauge{height:240px !important;margin:0 !important}
+  #ms-feed .bm-card{flex:1;margin-top:20px !important}
+
+  @media (max-width:820px){
+    #ms-feed .ms-feed,#ms-feed .ms-gauges{grid-template-columns:1fr}
+    #ms-feed .ms-stack{padding:0 0 0 12%;margin-top:28px}
+  }
+</style>
+
+<div id="ms-feed">
+  <h2 class="ms-h2">What our trout eats</h2>
+  <p class="ms-p ms-intro">Feed is one of the biggest parts of a farmed fish's environmental footprint. Our trout eat Blue Impact feed from BioMar, which measures the footprint of every feed so it can keep improving it.</p>
+  <p class="ms-p ms-center" style="margin-top:28px"><a class="ms-link" href="https://discoverseafood.world/musholm-feed">Get full list of ingredients</a></p>
+
+  <div class="ms-feed">
+    <div class="ms-stack">
+      <div class="ms-logo"><img src="https://images.squarespace-cdn.com/content/v1/6087cdf4156ca6635a3438ee/c9f3962b-6b27-4581-bf72-479340daa537/Logo-Blue+Impact-Blue-Green.png?format=750w" alt="BioMar Blue Impact"></div>
+      <div class="ms-photo"><img src="https://images.squarespace-cdn.com/content/v1/6087cdf4156ca6635a3438ee/06d7fe7f-0a37-400a-9ef4-0a705bb0a3f9/file.jpg?format=1000w" alt="A child in a yellow raincoat sitting by the sea" loading="lazy"></div>
+    </div>
+    <div>
+      <h3 class="ms-h3">Three numbers we track</h3>
+      <p class="ms-p">BioMar measures three things in our feed, and uses them to improve it year-by-year. Hover over or tap each one below to see where it sits on the scale.</p>
+    </div>
+  </div>
+
+  <div class="ms-gauges">
+<div><style>
+  #bm-cf{
+    --panel:#283550;        /* section background */
+    --navy:#1f396f;         /* cloud outline + wordmark */
+    --cloud:#ffffff;
+    --green:#7cc14d;
+    --green-lit:#8fd05c;
+    --lavender:#9799b8;
+    --sand:#f1deae;
+    --peach:#eec1a1;
+    --card:#dadada;         /* text card fill */
+    --card-ink:#283550;     /* text card type */
+
+    box-sizing:border-box;
+    background:var(--panel);
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    padding:24px 20px calc(28px + env(safe-area-inset-bottom,0px));
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  #bm-cf *,#bm-cf *::before,#bm-cf *::after{box-sizing:inherit}
+
+  #bm-cf .bm-inner{width:100%;max-width:400px}
+
+  /* ── gauge ───────────────────────────────────────────────── */
+  #bm-cf .bm-gauge{width:100%;height:auto;display:block;overflow:visible}
+
+  #bm-cf .bm-band{transition:fill .3s ease, opacity .3s ease}
+  #bm-cf .bm-band--muted{opacity:.5}
+  #bm-cf .bm-gauge.is-open .bm-band--muted{opacity:.38}
+
+  #bm-cf .bm-hotspot{
+    cursor:pointer;outline:none;
+    transform-origin:200px 208px;
+    transition:transform .35s cubic-bezier(.22,.9,.3,1);
+  }
+  #bm-cf .bm-hotspot .bm-band--live{fill:var(--green)}
+  #bm-cf .bm-gauge.is-open .bm-hotspot{transform:scale(1.045)}
+  #bm-cf .bm-gauge.is-open .bm-hotspot .bm-band--live{fill:var(--green-lit)}
+  #bm-cf .bm-hotspot:focus-visible .bm-focusring{
+    stroke:#fff;stroke-width:3;stroke-dasharray:5 4;
+  }
+  #bm-cf .bm-focusring{fill:none;stroke:none}
+
+  #bm-cf .bm-tick{
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    font-size:19px;font-weight:700;text-anchor:middle;
+    transition:opacity .3s ease;
+  }
+  #bm-cf .bm-tick--muted{opacity:.45}
+  #bm-cf .bm-gauge.is-open .bm-tick--muted{opacity:.32}
+
+  #bm-cf .bm-readout text{
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    fill:var(--navy);
+  }
+  #bm-cf .bm-main{text-anchor:end}
+  #bm-cf .bm-sub{text-anchor:start}
+  #bm-cf .bm-tail{text-anchor:start}
+
+  #bm-cf .bm-wordmark{font-size:46px;font-weight:700;transition:opacity .28s ease}
+  #bm-cf .bm-figure{
+    font-size:42px;font-weight:700;text-anchor:middle;
+    opacity:0;transition:opacity .28s ease;
+  }
+  #bm-cf .bm-unit{font-size:13px;font-weight:600;opacity:0;transition:opacity .28s ease}
+
+  #bm-cf .bm-gauge.is-open .bm-wordmark{opacity:0}
+  #bm-cf .bm-gauge.is-open .bm-figure,
+  #bm-cf .bm-gauge.is-open .bm-unit{opacity:1}
+
+  /* ── text card ───────────────────────────────────────────── */
+  #bm-cf .bm-card{
+    background:var(--card);
+    color:var(--card-ink);
+    border-radius:8px;
+    padding:22px 20px 24px;
+    margin-top:10px;
+  }
+  #bm-cf .bm-card h2{
+    margin:0 0 18px;
+    font-size:20px;
+    font-weight:600;
+    line-height:1.3;
+    text-align:center;
+    color:inherit;
+  }
+  #bm-cf .bm-card p{
+    margin:0;
+    font-size:17px;
+    font-weight:400;
+    line-height:1.8;
+    color:inherit;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    #bm-cf .bm-hotspot,#bm-cf .bm-band,#bm-cf .bm-tick,
+    #bm-cf .bm-wordmark,#bm-cf .bm-figure,#bm-cf .bm-unit{transition-duration:.01ms}
+    #bm-cf .bm-gauge.is-open .bm-hotspot{transform:none}
+  }
+</style>
+
+<div id="bm-cf">
+ <div class="bm-inner">
+
+  <svg class="bm-gauge" viewBox="42 50 316 253" role="img" aria-labelledby="bm-cf-title" id="bm-cf-gauge">
+    <title id="bm-cf-title">Carbon footprint gauge</title>
+
+    <!-- cloud body -->
+    <path d="M 48 208 A 152 152 0 0 1 352 208 A 62 62 0 0 1 276 246
+             A 82 82 0 0 1 124 246 A 62 62 0 0 1 48 208 Z" fill="var(--cloud)" stroke="var(--navy)" stroke-width="7" stroke-linejoin="round"></path>
+
+    <!-- muted band: 0 to 1 -->
+    <path class="bm-band bm-band--muted" d="M 78.00 208.00 A 122 122 0 0 1 94.34 147.00 L 149.77 179.00
+             A 58 58 0 0 0 142.00 208.00 Z" fill="var(--lavender)"></path>
+
+    <!-- muted band: 2 to 3 -->
+    <path class="bm-band bm-band--muted" d="M 200.00 86.00 A 122 122 0 0 1 286.27 121.73 L 241.01 166.99
+             A 58 58 0 0 0 200.00 150.00 Z" fill="var(--sand)"></path>
+
+    <!-- muted band: 3+ -->
+    <path class="bm-band bm-band--muted" d="M 286.27 121.73 A 122 122 0 0 1 322.00 208.00 L 258.00 208.00
+             A 58 58 0 0 0 241.01 166.99 Z" fill="var(--peach)"></path>
+
+    <!-- live band (enlarged green) -->
+    <g class="bm-hotspot" id="bm-cf-hotspot" data-value="1.44" role="button" tabindex="0" aria-pressed="false" aria-label="Show carbon footprint value">
+      <path class="bm-band bm-band--live bm-focusring" d="M 94.34 147.00 A 122 122 0 0 1 200.00 86.00 L 200.00 150.00
+               A 58 58 0 0 0 149.77 179.00 Z"></path>
+      <path d="M 88.13 135.38 A 135 135 0 0 1 200.00 73.00 L 200.00 158.00
+               A 50 50 0 0 0 156.70 183.00 Z" fill="transparent"></path>
+    </g>
+
+    <!-- tick labels -->
+    <text class="bm-tick bm-tick--muted" x="62" y="208" fill="var(--navy)" dominant-baseline="central" transform="rotate(-90 62 208)">0</text>
+    <text class="bm-tick" x="102" y="110" fill="var(--green)" dominant-baseline="central" transform="rotate(-45 102 110)">1</text>
+    <text class="bm-tick" x="200" y="70" fill="var(--green)" dominant-baseline="central">2</text>
+    <text class="bm-tick bm-tick--muted" x="298" y="110" fill="var(--peach)" dominant-baseline="central" transform="rotate(45 298 110)">3+</text>
+
+    <g class="bm-readout">
+      <g class="bm-wordmark" data-centre="200" transform="translate(2.68 0)">
+        <text class="bm-main" x="222" y="232">CO</text>
+        <text class="bm-sub" x="227" y="243" font-size="27">2</text>
+      </g>
+
+      <text class="bm-figure" x="200" y="232">1.44</text>
+
+      <g class="bm-unit" data-centre="200" transform="translate(12.65 0)">
+        <text class="bm-main" x="150" y="254">kg CO</text>
+        <text class="bm-sub" x="151" y="258" font-size="9">2</text>
+        <text class="bm-tail" x="157.5" y="254">e / kg feed</text>
+      </g>
+    </g>
+  </svg>
+
+  <section class="bm-card">
+    <h2>Carbon footprint</h2>
+    <p>1.44 kg CO₂e of greenhouse gas emissions for every kg of feed produced.</p>
+  </section>
+
+  <p aria-live="polite" id="bm-cf-sr" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); transition-timing-function: ease; transition-duration: 0.6s; transition-delay: 0.473684s;"></p>
+ </div>
+</div>
+
+<script>
+(function(){
+  var gauge = document.getElementById('bm-cf-gauge');
+  var spot  = document.getElementById('bm-cf-hotspot');
+  var sr    = document.getElementById('bm-cf-sr');
+  if (!gauge || !spot) return;
+
+  var value = spot.getAttribute('data-value');
+  var open  = false;
+
+  function set(state){
+    if (state === open) return;
+    open = state;
+    gauge.classList.toggle('is-open', open);
+    spot.setAttribute('aria-pressed', open ? 'true' : 'false');
+    sr.textContent = open ? 'Carbon footprint: ' + value + ' kg CO2e per kg feed' : '';
+  }
+
+  // The whole block (gauge and card) responds to hover and tap
+  var root = document.getElementById('bm-cf');
+  root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') set(true); });
+  root.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') set(false); });
+  root.addEventListener('click', function(e){ e.preventDefault(); set(true); });
+  spot.addEventListener('focus',      function(){ set(true); });
+  spot.addEventListener('blur',       function(){ set(false); });
+  spot.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); set(!open); }
+    if (e.key === 'Escape'){ set(false); spot.blur(); }
+  });
+  document.addEventListener('click', function(e){
+    if (open && !root.contains(e.target)) set(false);
+  });
+
+  // Centre each CO2 lockup once the webfont is in, so Montserrat's real
+  // metrics decide the spacing rather than a hard-coded guess.
+  function centreLockups(){
+    var groups = gauge.querySelectorAll('[data-centre]');
+    Array.prototype.forEach.call(groups, function(g){
+      g.removeAttribute('transform');
+      var box = g.getBBox();
+      if (!box.width) return;           // hidden container: keep static positions
+      var dx = parseFloat(g.getAttribute('data-centre')) - (box.x + box.width / 2);
+      if (Math.abs(dx) > 0.5) g.setAttribute('transform','translate(' + dx.toFixed(2) + ' 0)');
+    });
+  }
+
+  centreLockups();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(centreLockups);
+  setTimeout(centreLockups, 1200);      // fallback if the font API is unavailable
+})();
+</script></div>
+      <div><style>
+  #bm-cr{
+    --panel:#283550;
+    --navy:#1f396f;
+    --body:#ffffff;
+    --yellow:#e8b724;
+    --yellow-lit:#f2cb3f;
+    --orange:#df6926;
+    --green:#7cc14d;
+    --lavender:#9799b8;
+    --green-pale:#bcd9a6;
+    --orange-pale:#eec1a1;
+    --card:#dadada;
+    --card-ink:#283550;
+
+    box-sizing:border-box;
+    background:var(--panel);
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    padding:24px 20px calc(28px + env(safe-area-inset-bottom,0px));
+    display:flex;flex-direction:column;align-items:center;
+  }
+  #bm-cr *,#bm-cr *::before,#bm-cr *::after{box-sizing:inherit}
+  #bm-cr .bm-inner{width:100%;max-width:400px}
+  #bm-cr .bm-gauge{width:100%;height:auto;display:block;overflow:visible}
+
+  #bm-cr .bm-band{transition:fill .3s ease, opacity .3s ease}
+  #bm-cr .bm-band--muted{opacity:.5}
+  #bm-cr .bm-gauge.is-open .bm-band--muted{opacity:.38}
+
+  #bm-cr .bm-hotspot{cursor:pointer;outline:none}
+  #bm-cr .bm-hotspot--band{
+    transform-origin:200px 208px;
+    transition:transform .35s cubic-bezier(.22,.9,.3,1);
+  }
+  #bm-cr .bm-hotspot .bm-band--live{fill:var(--yellow)}
+  #bm-cr .bm-gauge.is-open .bm-hotspot--band{transform:scale(1.045)}
+  #bm-cr .bm-gauge.is-open .bm-hotspot .bm-band--live{fill:var(--yellow-lit)}
+  #bm-cr .bm-hotspot:focus-visible .bm-focusring{
+    stroke:var(--navy);stroke-width:3;stroke-dasharray:5 4;
+  }
+  #bm-cr .bm-focusring{stroke:none}
+
+  #bm-cr .bm-tick{
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;font-weight:700;text-anchor:middle;
+    transition:opacity .3s ease;
+  }
+  #bm-cr .bm-tick--muted{opacity:.45}
+  #bm-cr .bm-gauge.is-open .bm-tick--muted{opacity:.3}
+
+  #bm-cr .bm-leaf{transition:opacity .28s ease}
+  #bm-cr .bm-figure{
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    font-size:44px;font-weight:700;text-anchor:middle;fill:var(--navy);
+    opacity:0;transition:opacity .28s ease;
+  }
+  #bm-cr .bm-gauge.is-open .bm-leaf{opacity:0}
+  #bm-cr .bm-gauge.is-open .bm-figure{opacity:1}
+
+  #bm-cr .bm-card{
+    background:var(--card);color:var(--card-ink);
+    border-radius:8px;padding:22px 20px 24px;margin-top:10px;
+  }
+  #bm-cr .bm-card h2{
+    margin:0 0 18px;font-size:20px;font-weight:600;
+    line-height:1.3;text-align:center;color:inherit;
+  }
+  #bm-cr .bm-card p{
+    margin:0;font-size:17px;font-weight:400;line-height:1.8;color:inherit;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    #bm-cr .bm-hotspot--band,#bm-cr .bm-band,#bm-cr .bm-tick,
+    #bm-cr .bm-leaf,#bm-cr .bm-figure{transition-duration:.01ms}
+    #bm-cr .bm-gauge.is-open .bm-hotspot--band{transform:none}
+  }
+</style>
+
+<div id="bm-cr">
+ <div class="bm-inner">
+
+  <svg class="bm-gauge" viewBox="12 20 376 376" role="img" aria-labelledby="bm-cr-title" id="bm-cr-gauge">
+    <title id="bm-cr-title">Circular and restorative ingredients gauge</title>
+
+    <!-- white body -->
+    <circle cx="200" cy="208" r="182" fill="var(--body)"></circle>
+
+    <!-- Cycle ring: two arrows running anticlockwise on screen, with a gap
+         at each end so they almost close the circle.
+         Arrow 1 sweeps the top semicircle and finishes at 100%.
+         Arrow 2 picks up below that, runs round the bottom, finishes at 0%. -->
+    <g fill="none" stroke="var(--navy)" stroke-width="7">
+      <path d="M 365.60 196.42 A 166 166 0 0 0 34.00 208.00"></path>
+      <path d="M 41.25 256.53 A 166 166 0 0 0 362.37 242.51"></path>
+    </g>
+    <!-- arrow 1 head, finishing at the 100% end of the dial -->
+    <path d="M 34.00 228.00 L 23.00 208.00 L 45.00 208.00 Z" fill="var(--navy)"></path>
+    <!-- arrow 2 head, finishing at the 0% end of the dial -->
+    <path d="M 366.53 222.95 L 373.13 244.80 L 351.61 240.23 Z" fill="var(--navy)"></path>
+
+    <!-- muted band: 75–100% -->
+    <path class="bm-band bm-band--muted" d="M 78.00 208.00 A 122 122 0 0 1 113.73 121.73 L 158.99 166.99
+             A 58 58 0 0 0 142.00 208.00 Z" fill="var(--lavender)"></path>
+    <!-- muted band: 50–75% -->
+    <path class="bm-band bm-band--muted" d="M 113.73 121.73 A 122 122 0 0 1 200.00 86.00 L 200.00 150.00
+             A 58 58 0 0 0 158.99 166.99 Z" fill="var(--green-pale)"></path>
+    <!-- muted band: 0–25% -->
+    <path class="bm-band bm-band--muted" d="M 286.27 121.73 A 122 122 0 0 1 322.00 208.00 L 258.00 208.00
+             A 58 58 0 0 0 241.01 166.99 Z" fill="var(--orange-pale)"></path>
+
+    <!-- HIGHLIGHTED BAND: 25–50%, the quarter 32.6% falls in -->
+    <g class="bm-hotspot bm-hotspot--band" data-value="32.6%" role="button" tabindex="0" aria-pressed="false" aria-label="Show circular and restorative value">
+      <path class="bm-band bm-band--live bm-focusring" d="M 200.00 86.00 A 122 122 0 0 1 286.27 121.73 L 241.01 166.99
+               A 58 58 0 0 0 200.00 150.00 Z"></path>
+      <path d="M 200.00 73.00 A 135 135 0 0 1 295.46 112.54 L 235.36 172.64
+               A 50 50 0 0 0 200.00 158.00 Z" fill="transparent"></path>
+    </g>
+
+    <!-- tick labels -->
+    <g class="bm-tick-set">
+      <text class="bm-tick bm-tick--muted" x="338" y="208" fill="var(--orange)" dominant-baseline="central" transform="rotate(90 338 208)">0%</text>
+      <text class="bm-tick" x="297.6" y="110.4" fill="var(--orange)" dominant-baseline="central" transform="rotate(45 297.6 110.4)">25%</text>
+      <text class="bm-tick" x="200" y="70" fill="var(--yellow)" dominant-baseline="central">50%</text>
+      <text class="bm-tick bm-tick--muted" x="102.4" y="110.4" fill="var(--green)" dominant-baseline="central" transform="rotate(-45 102.4 110.4)">75%</text>
+      <text class="bm-tick bm-tick--muted" x="62" y="208" fill="var(--navy)" dominant-baseline="central" transform="rotate(-90 62 208)">100%</text>
+    </g>
+
+    <!-- leaf: second hover target -->
+    <g class="bm-hotspot bm-hotspot--leaf" data-value="32.6%" role="button" tabindex="0" aria-pressed="false" aria-label="Show circular and restorative value">
+      <g class="bm-leaf" fill="var(--navy)" transform="translate(195 282) scale(1.15) translate(-206 -285)">
+        <path d="M 202 312 C 170 300 144 274 146 236 C 182 252 206 280 202 312 Z"></path>
+        <path d="M 206 310 C 222 278 242 258 266 254 C 260 286 236 306 206 310 Z"></path>
+        <path d="M 196 296 L 208 334 L 194 334 Z"></path>
+        <path d="M 222 294 C 234 278 246 266 258 260" fill="none" stroke="var(--body)" stroke-width="5" stroke-linecap="round"></path>
+      </g>
+      <circle class="bm-focusring" cx="195" cy="282" r="72" fill="transparent"></circle>
+    </g>
+
+    <text class="bm-figure" x="200" y="298">32.6%</text>
+  </svg>
+
+  <section class="bm-card">
+    <h2>Circular &amp; restorative</h2>
+    <p>About a third (32.6%) of the feed is made from by-products and from crops grown with regenerative farming.</p>
+  </section>
+
+  <p aria-live="polite" id="bm-cr-sr" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); transition-timing-function: ease; transition-duration: 0.6s; transition-delay: 0.454737s;"></p>
+ </div>
+</div>
+
+<script>
+(function(){
+  var gauge = document.getElementById('bm-cr-gauge');
+  var sr    = document.getElementById('bm-cr-sr');
+  if (!gauge) return;
+  var spots = gauge.querySelectorAll('.bm-hotspot');
+  if (!spots.length) return;
+  var value = spots[0].getAttribute('data-value');
+  var open  = false;
+
+  function set(state){
+    if (state === open) return;
+    open = state;
+    gauge.classList.toggle('is-open', open);
+    Array.prototype.forEach.call(spots, function(s){
+      s.setAttribute('aria-pressed', open ? 'true' : 'false');
+    });
+    sr.textContent = open ? 'Circular and restorative ingredients: ' + value : '';
+  }
+
+  // The whole block (gauge and card) responds to hover and tap
+  var root = document.getElementById('bm-cr');
+  root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') set(true); });
+  root.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') set(false); });
+  root.addEventListener('click', function(e){ e.preventDefault(); set(true); });
+
+  Array.prototype.forEach.call(spots, function(spot){
+    spot.addEventListener('focus',      function(){ set(true); });
+    spot.addEventListener('blur',       function(){ set(false); });
+    spot.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); set(!open); }
+      if (e.key === 'Escape'){ set(false); spot.blur(); }
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!open) return;
+    if (!root.contains(e.target)) set(false);
+  });
+})();
+</script></div>
+      <div><style>
+  #bm-ff{
+    --panel:#283550;
+    --navy:#1f396f;
+    --body:#ffffff;
+    --yellow:#e8b724;
+    --yellow-lit:#f2cb3f;
+    --orange:#df6926;
+    --green:#7cc14d;
+    --lavender:#9799b8;
+    --green-pale:#bcd9a6;
+    --orange-pale:#eec1a1;
+    --card:#dadada;
+    --card-ink:#283550;
+
+    box-sizing:border-box;
+    background:var(--panel);
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    padding:24px 20px calc(28px + env(safe-area-inset-bottom,0px));
+    display:flex;flex-direction:column;align-items:center;
+  }
+  #bm-ff *,#bm-ff *::before,#bm-ff *::after{box-sizing:inherit}
+  #bm-ff .bm-inner{width:100%;max-width:400px}
+  #bm-ff .bm-gauge{width:100%;height:auto;display:block;overflow:visible}
+
+  #bm-ff .bm-band{transition:fill .3s ease, opacity .3s ease}
+  #bm-ff .bm-band--muted{opacity:.5}
+  #bm-ff .bm-gauge.is-open .bm-band--muted{opacity:.38}
+
+  #bm-ff .bm-hotspot{cursor:pointer;outline:none}
+  #bm-ff .bm-hotspot--band{
+    transform-origin:200px 208px;
+    transition:transform .35s cubic-bezier(.22,.9,.3,1);
+  }
+  #bm-ff .bm-hotspot .bm-band--live{fill:var(--yellow)}
+  #bm-ff .bm-gauge.is-open .bm-hotspot--band{transform:scale(1.045)}
+  #bm-ff .bm-gauge.is-open .bm-hotspot .bm-band--live{fill:var(--yellow-lit)}
+  #bm-ff .bm-hotspot:focus-visible .bm-focusring{
+    stroke:var(--navy);stroke-width:3;stroke-dasharray:5 4;
+  }
+  #bm-ff .bm-focusring{stroke:none}
+
+  #bm-ff .bm-tick{
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;font-weight:700;text-anchor:middle;
+    transition:opacity .3s ease;
+  }
+  #bm-ff .bm-tick--muted{opacity:.45}
+  #bm-ff .bm-gauge.is-open .bm-tick--muted{opacity:.3}
+
+  #bm-ff .bm-readout text{
+    font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;
+    fill:var(--navy);text-anchor:middle;
+  }
+  #bm-ff .bm-wordmark{font-size:31px;font-weight:700;transition:opacity .28s ease}
+  #bm-ff .bm-figure{
+    font-size:42px;font-weight:700;opacity:0;transition:opacity .28s ease;
+  }
+  #bm-ff .bm-unit{font-size:14px;font-weight:600;opacity:0;transition:opacity .28s ease}
+  #bm-ff .bm-gauge.is-open .bm-wordmark{opacity:0}
+  #bm-ff .bm-gauge.is-open .bm-figure,
+  #bm-ff .bm-gauge.is-open .bm-unit{opacity:1}
+
+  #bm-ff .bm-card{
+    background:var(--card);color:var(--card-ink);
+    border-radius:8px;padding:22px 20px 24px;margin-top:10px;
+  }
+  #bm-ff .bm-card h2{
+    margin:0 0 18px;font-size:20px;font-weight:600;
+    line-height:1.3;text-align:center;color:inherit;
+  }
+  #bm-ff .bm-card p{
+    margin:0;font-size:17px;font-weight:400;line-height:1.8;color:inherit;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    #bm-ff .bm-hotspot--band,#bm-ff .bm-band,#bm-ff .bm-tick,
+    #bm-ff .bm-wordmark,#bm-ff .bm-figure,#bm-ff .bm-unit{transition-duration:.01ms}
+    #bm-ff .bm-gauge.is-open .bm-hotspot--band{transform:none}
+  }
+</style>
+
+<div id="bm-ff">
+ <div class="bm-inner">
+
+  <svg class="bm-gauge" viewBox="6 32 361 278" role="img" aria-labelledby="bm-ff-title" id="bm-ff-gauge">
+    <title id="bm-ff-title">Forage fish dependency gauge</title>
+
+    <!-- fish head body, traced from the source artwork -->
+    <path d="M 24 206 A 168 168 0 0 1 360 206 L 360.9 208.0 C 360.4 210.7 358.7 220.0 358.1 224.0 C 357.5 228.0 357.7 229.3 357.4 232.0 C 357.1 234.7 356.5 237.3 356.0 240.0 C 355.6 242.7 355.1 245.3 354.6 248.0 C 354.2 250.7 353.8 253.3 353.3 256.0 C 352.7 258.7 352.0 261.3 351.2 264.0 C 350.4 266.7 351.9 269.9 348.4 272.0 C 344.9 274.1 335.6 276.4 330.0 276.6 C 324.4 276.8 320.0 274.4 315.0 273.1 C 310.0 271.9 305.0 270.4 300.0 269.0 C 295.0 267.6 290.0 266.0 285.0 264.8 C 280.0 263.7 275.0 262.6 270.0 262.1 C 265.0 261.5 260.0 260.8 255.0 261.4 C 250.0 261.9 245.0 263.7 240.0 265.5 C 235.0 267.4 230.0 269.9 225.0 272.4 C 220.0 275.0 215.0 278.0 210.0 280.7 C 205.0 283.5 200.0 286.5 195.0 289.0 C 190.0 291.6 185.0 294.0 180.0 295.9 C 175.0 297.9 170.0 299.5 165.0 300.8 C 160.0 302.0 155.0 303.0 150.0 303.5 C 145.0 304.1 140.0 304.3 135.0 304.2 C 130.0 304.1 125.0 303.5 120.0 302.8 C 115.0 302.2 110.0 301.1 105.0 300.1 C 100.0 299.0 95.0 297.9 90.0 296.6 C 85.0 295.4 80.0 294.0 75.0 292.5 C 70.0 291.0 65.0 289.5 60.0 287.6 C 55.0 285.8 50.0 283.7 45.0 281.4 C 40.0 279.1 34.1 276.0 30.0 273.8 C 25.9 271.6 23.1 270.3 20.5 268.0 C 17.9 265.7 15.6 262.7 14.3 260.0 C 12.9 257.3 12.4 254.7 12.2 252.0 C 12.0 249.3 12.4 246.7 12.9 244.0 C 13.3 241.3 13.8 238.7 15.0 236.0 C 16.1 233.3 17.9 232.0 19.8 228.0 C 21.6 224.0 25.0 214.7 26.0 212.0 Z" fill="var(--body)" stroke="var(--navy)" stroke-width="7" stroke-linejoin="round"></path>
+
+    <!-- muted band: 0–0.5 -->
+    <path class="bm-band bm-band--muted" d="M 78.00 208.00 A 122 122 0 0 1 113.73 121.73 L 158.99 166.99
+             A 58 58 0 0 0 142.00 208.00 Z" fill="var(--lavender)"></path>
+    <!-- muted band: 0.5–1 -->
+    <path class="bm-band bm-band--muted" d="M 113.73 121.73 A 122 122 0 0 1 200.00 86.00 L 200.00 150.00
+             A 58 58 0 0 0 158.99 166.99 Z" fill="var(--green-pale)"></path>
+    <!-- muted band: 1.5+ -->
+    <path class="bm-band bm-band--muted" d="M 286.27 121.73 A 122 122 0 0 1 322.00 208.00 L 258.00 208.00
+             A 58 58 0 0 0 241.01 166.99 Z" fill="var(--orange-pale)"></path>
+
+    <!-- HIGHLIGHTED BAND: 1–1.5, the quarter 1.1 falls in -->
+    <g class="bm-hotspot bm-hotspot--band" data-value="1.1" role="button" tabindex="0" aria-pressed="false" aria-label="Show forage fish dependency value">
+      <path class="bm-band bm-band--live bm-focusring" d="M 200.00 86.00 A 122 122 0 0 1 286.27 121.73 L 241.01 166.99
+               A 58 58 0 0 0 200.00 150.00 Z"></path>
+      <path d="M 200.00 73.00 A 135 135 0 0 1 295.46 112.54 L 235.36 172.64
+               A 50 50 0 0 0 200.00 158.00 Z" fill="transparent"></path>
+    </g>
+
+    <!-- tick labels -->
+    <text class="bm-tick bm-tick--muted" x="62" y="208" fill="var(--navy)" dominant-baseline="central" transform="rotate(-90 62 208)">0</text>
+    <text class="bm-tick bm-tick--muted" x="102.4" y="110.4" fill="var(--green)" dominant-baseline="central" transform="rotate(-45 102.4 110.4)">0.5</text>
+    <text class="bm-tick" x="200" y="70" fill="var(--yellow)" dominant-baseline="central">1</text>
+    <text class="bm-tick" x="297.6" y="110.4" fill="var(--orange)" dominant-baseline="central" transform="rotate(45 297.6 110.4)">1.5+</text>
+
+    <!-- eye and gills, traced positions -->
+    <circle cx="63" cy="231.5" r="8" fill="var(--navy)"></circle>
+    <g fill="none" stroke="var(--navy)" stroke-width="7" stroke-linecap="round">
+      <path d="M 290 234.5 C 305 231 322 229 340 230.5"></path>
+      <path d="M 277 246.5 C 292 249.5 310 253 327 253"></path>
+    </g>
+
+    <!-- readout: second hover target -->
+    <g class="bm-hotspot bm-hotspot--word" data-value="1.1" role="button" tabindex="0" aria-pressed="false" aria-label="Show forage fish dependency value">
+      <g class="bm-readout">
+        <text class="bm-wordmark" x="181" y="247">FFDR</text>
+        <text class="bm-figure" x="181" y="242">1.1</text>
+        <text class="bm-unit" x="181" y="266">FFDR</text>
+      </g>
+      <rect class="bm-focusring" x="111" y="212" width="140" height="62" rx="10" fill="transparent"></rect>
+    </g>
+  </svg>
+
+  <section class="bm-card">
+    <h2>Wild fish in the feed</h2>
+    <p>About 1.1 kg of wild forage fish goes into the feed for each kg of trout we raise. We are working to bring this down.</p>
+  </section>
+
+  <p aria-live="polite" id="bm-ff-sr" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); transition-timing-function: ease; transition-duration: 0.6s; transition-delay: 0.492632s;"></p>
+</div>
+</div>
+
+<script>
+(function(){
+  var gauge = document.getElementById('bm-ff-gauge');
+  var sr    = document.getElementById('bm-ff-sr');
+  if (!gauge) return;
+  var spots = gauge.querySelectorAll('.bm-hotspot');
+  if (!spots.length) return;
+  var value = spots[0].getAttribute('data-value');
+  var open  = false;
+
+  function set(state){
+    if (state === open) return;
+    open = state;
+    gauge.classList.toggle('is-open', open);
+    Array.prototype.forEach.call(spots, function(s){
+      s.setAttribute('aria-pressed', open ? 'true' : 'false');
+    });
+    sr.textContent = open ? 'Forage fish dependency ratio: ' + value : '';
+  }
+
+  // The whole block (gauge and card) responds to hover and tap
+  var root = document.getElementById('bm-ff');
+  root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') set(true); });
+  root.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') set(false); });
+  root.addEventListener('click', function(e){ e.preventDefault(); set(true); });
+
+  Array.prototype.forEach.call(spots, function(spot){
+    spot.addEventListener('focus',      function(){ set(true); });
+    spot.addEventListener('blur',       function(){ set(false); });
+    spot.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); set(!open); }
+      if (e.key === 'Escape'){ set(false); spot.blur(); }
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!open) return;
+    if (!root.contains(e.target)) set(false);
+  });
+})();
+</script></div>
+  </div>
+
+  <p class="ms-p ms-center" style="margin-top:40px"><a class="ms-link" href="https://www.biomar.com/feed-and-services/feed-solutions/blue-impact" target="_blank" rel="noopener">Learn more about Blue Impact →</a></p>
+</div>
