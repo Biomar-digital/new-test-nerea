@@ -63,3 +63,12 @@ To confirm with Musholm before use:
   rules (Regulation (EC) 1924/2006), and environmental wording is reviewed against EU green claims rules.
 - The ASC logo is shown, as on the current page; check Musholm's ASC logo licence covers consumer use.
 - The contact email (currently Teis Volstrup's direct address).
+
+## Concept version (`concept/index.html`)
+
+A free-design take on the consumer page, not bound to the current Squarespace template. Editorial
+layout with Source Serif headlines and Montserrat body; answers "where is it from?" in the first
+screen; every number is visible without hovering; the nature targets become three big figures
+(56 ha, ½, 2 seas); the feed gauges become simple scales marked "higher/lower is better"; and a
+"your pack" placeholder shows where batch-level traceability (farm, harvest date) would go.
+Same facts as the other versions, and the same points to confirm apply.
